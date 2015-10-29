@@ -6,7 +6,7 @@ This project is currently in the alpha phase and this client is presented as a w
 for discussions and conversations. It is not supported and is not to be used in production applications
 at this stage.
 
-### Installing
+## Installing
 
 The client can be pulled into python applications using [pip](pip.readthedocs.org/).
  
@@ -23,7 +23,7 @@ The client has a managed release process and should your build should pull in a 
 release new functionality / breaking changes into a new client release. The history can be found on the [github releases](https://github.com/alphagov/notify-api-client/releases) page.
 
 
-### Usage
+## Usage
 
 Prior to usage an account must be created through the notify admin console. This will allow access to the API credentials you application.
 
@@ -48,7 +48,7 @@ Where:
     * Must be between 1 and 160 characters in length
     
 
-### Errors
+## Errors
 
 Errors are returned as subclasses of the APIError class.
 
@@ -67,3 +67,14 @@ Both error classes contain the message from the API plus the status code. Exampl
         except APIError as ex:
             log(ex.response.json())
             return 'error'
+            
+## Release process
+
+To update the client:
+
+* Ensure the version number in notify_client/__init__.py is bumped to reflect the changes (minor/major revisions and so on)
+* Perform the merge of the branch to master
+* run ./scripts/push-tag.sh
+
+The script will perform a git release of that new tag.
+            
