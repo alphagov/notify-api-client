@@ -12,7 +12,10 @@ from .errors import HTTPError, InvalidResponse
 
 class BaseAPIClient(object):
     def __init__(self, base_url=None, auth_token=None, enabled=True):
-        self.base_url = base_url
+        if base_url:
+            self.base_url = base_url
+        else:
+            self.base_url = 'https://test-notify-api.herokuapp.com/'
         self.auth_token = auth_token
         self.enabled = enabled
 
