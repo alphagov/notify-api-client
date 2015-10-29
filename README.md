@@ -72,9 +72,9 @@ Both error classes contain the message from the API plus the status code. Exampl
 
 To update the client:
 
-* Ensure the version number in notify_client/__init__.py is bumped to reflect the changes (minor/major revisions and so on)
+* Ensure the version number in `notify_client/__init__.py` is bumped to reflect the changes (minor/major revisions and so on)
 * Perform the merge of the branch to master
-* run ./scripts/push-tag.sh
+* run `./scripts/push-tag.sh`
 
 The script will perform a git release of that new tag.
             
