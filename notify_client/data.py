@@ -126,7 +126,7 @@ class DataAPIClient(BaseAPIClient):
     def get_notification_by_id(self, notification_id):
         return self._get("/notification/{}".format(notification_id))
 
-    def send_sms(self, mobile_number, message, job_id=None, token=None):
+    def send_sms(self, mobile_number, message, job_id=None, token=None, description=None):
 
         notification = {}
         notification.update({
@@ -137,6 +137,11 @@ class DataAPIClient(BaseAPIClient):
         if job_id:
             notification.update({
                 "jobId": job_id
+            })
+
+        if description:
+            notification.update({
+                "description": description
             })
 
         return self._post(
