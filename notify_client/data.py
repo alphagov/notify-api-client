@@ -120,6 +120,9 @@ class DataAPIClient(BaseAPIClient):
     def get_jobs_by_service_id(self, service_id):
         return self._get("/service/{}/jobs".format(service_id))
 
+    def get_job_by_id(self, job_id):
+        return self._get("/job/{}".format(job_id))
+
     def get_notifications_by_job_id(self, job_id):
         return self._get("/job/{}/notifications".format(job_id))
 
