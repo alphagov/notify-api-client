@@ -107,12 +107,13 @@ class DataAPIClient(BaseAPIClient):
     def deactivate_service(self, service_id):
         return self._post('/service/{}/deactivate'.format(service_id), data={})
 
-    def create_job(self, job_name, service_id):
+    def create_job(self, job_name, filename, service_id):
         return self._post(
             '/job',
             data={
                 "job": {
                     "name": job_name,
+                    "filename": filename,
                     "serviceId": service_id
                 }
             })
