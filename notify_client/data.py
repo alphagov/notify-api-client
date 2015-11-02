@@ -80,7 +80,7 @@ class DataAPIClient(BaseAPIClient):
             })
 
     def activate_user(self, user_id):
-        return self._post('/user/{}/activate'.format(user_id))
+        return self._post('/user/{}/activate'.format(user_id), data={})
 
     def get_service_by_user_id_and_service_id(self, user_id, service_id):
         return self._get("/user/{}/service/{}".format(user_id, service_id))
