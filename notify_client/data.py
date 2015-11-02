@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 from .base import BaseAPIClient
-from .errors import HTTPError
 
 
 class NotifyAPIClient(BaseAPIClient):

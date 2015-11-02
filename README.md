@@ -29,11 +29,11 @@ Prior to usage an account must be created through the notify admin console. This
 
 Once credentials have been obtained the client is initialised as follows:
 
-    from notify_client import DataAPIClient
+    from notify_client import NotifyAPIClient
     
 Then to send an SMS message
 
-    DataAPIClient(auth_token='your-token-here').send_sms(mobile-number, message)
+    NotifyAPIClient(auth_token='your-token-here').send_sms(mobile-number, message)
 
 Where:
 
@@ -59,7 +59,7 @@ Errors are returned as subclasses of the APIError class.
 Both error classes contain the message from the API plus the status code. Example usage.
 
         try:
-            DataAPIClient(auth_token='your-token-here').send_sms(
+            NotifyAPIClient(auth_token='your-token-here').send_sms(
                 '+447777111111',
                 'message'
             )
