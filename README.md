@@ -12,7 +12,7 @@ The client can be pulled into python applications using [pip](pip.readthedocs.or
  
 Place the following line into the requirements.txt file in your application.
  
-    git+https://github.com/alphagov/notify-api-client.git@0.0.4#egg=notify-api-client==0.0.4
+    git+https://github.com/alphagov/notify-api-client.git@0.1.2#egg=notify-api-client==0.1.2
     
 Then install with
 
