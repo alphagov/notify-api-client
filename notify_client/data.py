@@ -30,3 +30,29 @@ class NotifyAPIClient(BaseAPIClient):
             data={
                 "notification": notification
             }, token=token)
+
+    def send_email(self, email_address, message, from_str, subject, job_id=None, token=None, description=None):
+
+        notification = {}
+        notification.update({
+            "to": email_address,
+            "from": from_str,
+            "subject":subject,
+            "message": message
+        })
+
+        if job_id:
+            notification.update({
+                "jobId": job_id
+            })
+
+        if description:
+            notification.update({
+                "description": description
+            })
+
+        return self._post(
+            '/email/notification',
+            data={
+                "notification": notification
+            }, token=token)
