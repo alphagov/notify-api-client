@@ -32,7 +32,7 @@ class NotifyAPIClient(BaseAPIClient):
             }, token=token)
 
     def send_email(self, email_address, message, from_str, subject, job_id=None, token=None, description=None):
-
+        print("send_email, base_url: {}".format( self.base_url))
         notification = {}
         notification.update({
             "to": email_address,

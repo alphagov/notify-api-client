@@ -37,7 +37,7 @@ class BaseAPIClient(object):
 
         url = urlparse.urljoin(self.base_url, url)
 
-        print("API request %s %s", method, url)
+        print("API request {} {}".format(method, url))
         headers = {
             "Content-type": "application/json",
             "Authorization": "Bearer {}".format(token if token else self.auth_token)
@@ -51,11 +51,11 @@ class BaseAPIClient(object):
         except requests.RequestException as e:
             api_error = HTTPError.create(e)
             print(
-                "API %s request on %s failed with %s '%s'",
-                method, url, api_error.status_code, api_error.message)
+                "API {} request on {} failed with {} '{}'".format(
+                method, url, api_error.status_code, api_error.message))
             raise api_error
         finally:
-            print("API %s request on %s finished in %s", method, url)
+            print("API {} request on {} finished".format(method, url))
 
         try:
             return response.json()
