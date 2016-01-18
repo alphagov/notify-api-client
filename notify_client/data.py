@@ -30,3 +30,6 @@ class NotifyAPIClient(BaseAPIClient):
             data={
                 "notification": notification
             }, token=token)
+
+    def fetch_notifications(self):
+        return self._get('/notifications')
