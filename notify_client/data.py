@@ -31,8 +31,8 @@ class NotifyAPIClient(BaseAPIClient):
                 "notification": notification
             }, token=token)
 
-    def fetch_notifications(self):
-        return self._get('/notifications')
+    def fetch_notification_by_id(self, notification_id):
+        return self._get('/notification/{}'.format(notification_id))
 
     def send_email(self, email_address, message, from_address, subject, job_id=None, token=None, description=None):
 
